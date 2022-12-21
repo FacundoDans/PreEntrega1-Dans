@@ -1,0 +1,24 @@
+.nav {
+
+    padding: 15px 15px;
+    display: flex;
+    justify-items:center;
+   align-items: center;
+    background-color: black;
+}
+
+.nav-list{
+  
+        display: flex;
+        margin: 15px;
+        justify-content: space-around;
+        list-style:none; 
+
+}
+.nav-link {
+    margin: 15px;
+    color: white;
+    text-decoration: none;
+    
+    
+}
