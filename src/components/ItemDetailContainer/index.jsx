@@ -1,21 +1,18 @@
 import React, {useState, useEffect} from "react";
+import {getFirestore, doc, getDoc} from 'firebase/firestore';
 import ItemDetail from "../ItemDetail";
+import {useParams} from 'react-router-dom';
 
-const consola = {id: 1, image: "https://as01.epimg.net/meristation/imagenes/2020/11/18/noticias/1605740083_818108_1605740214_noticia_normal.jpg", title:"Ps5"};
 
 export const ItemDetailContainer = () => {
     const [data, setData] = useState({});
-
+    const {detalleId} = useParams();
 
     useEffect(() => {
-        const getData = new Promise((resolve) => {
-          setTimeout(() => {
-                resolve(consolas);
-        }, 2000);
-        });
-
-    getData.then(res => setData(res));
-
+        const querydb = getFirestore();
+        const queryDoc = doc(querydb, 'Productos', '5otn1pZtq8UMPdN8v7na');
+        getDoc(querydb)
+        .then(res => setData({id: res.id,...res.data()}))
     }, [])
 
     return (

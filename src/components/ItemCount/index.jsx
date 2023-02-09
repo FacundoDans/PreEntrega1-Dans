@@ -13,10 +13,10 @@ export const ItemCount = ({initial, stock, onAdd}) => {
         setCount(count + 1);
     }
 
-    useEffect{() => {
+    useEffect (() => {
         setCount(parseInt(initial));
-    }, [initial]
-    }
+    }, [initial])
+    
 
     
 
